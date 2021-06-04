@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>媒体查询实现效果t</title>
+    <style>
+        .container{
+            margin: 30px auto;
+        }
+        .container>div{
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            color: white;
+        }
+        .container div:nth-child(1){
+            background: red;
+        }
+        .container div:nth-child(2){
+            background: blue;
+        }
+        .container div:nth-child(3){
+            background: black;
+        }
+        .container div:nth-child(4){
+            background: yellow;
+        }
+        @media screen and (min-width:1200px){
+            .container{  
+                width: 1200px;
+                height: 60px;
+            }
+            .container>div{
+                width: 300px;
+                float: left;    
+            }
+            
+        }
+        @media screen and (max-width:1200px) and (min-width:992px){
+            .container{
+                width: 990px;
+            }
+            .container div:nth-child(1){
+                width: 990px;
+            }
+            .container div:nth-child(2),
+            .container div:nth-child(3),
+            .container div:nth-child(4){
+                float: left;
+                width: 330px;
+            }
+        }
+        @media screen and (max-width:992px) and (min-width:768px){
+            .container{
+                width: 768px;
+            }
+            .container div:nth-child(1),
+            .container div:nth-child(2){
+                float: left;
+                width: 384px;   
+            }
+            .container div:nth-child(3),
+            .container div:nth-child(4){
+                float: left;
+                width: 384px;   
+            }   
+        }
+        @media screen and (max-width:768px){
+            .container>div{
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>
